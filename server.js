@@ -11,7 +11,7 @@ LISSerialInterface.listPorts().then((ports) => {
     console.log(
       `  - ${port.path} (${port.manufacturer || "Unknown"}) [${
         port.serialNumber || "N/A"
-      }]`
+      }]`,
     );
   });
   console.log("");
@@ -20,7 +20,7 @@ LISSerialInterface.listPorts().then((ports) => {
 // =====================
 // ✅ CORRECT CONFIG
 // =====================
-const PORT = "COM7";
+const PORT = "/dev/ttyUSB1";
 const CONFIG = {
   baudRate: 9600, // ✅ MUST match analyzer
   dataBits: 8, // ✅ MUST be 8
