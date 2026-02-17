@@ -7,7 +7,7 @@ console.log("=".repeat(70));
 
 // Use the manual's default settings
 const port = new SerialPort({
-  path: "COM4",
+  path: "/dev/ttyUSB1",
   baudRate: 115200, // Manual default
   dataBits: 8,
   stopBits: 1,
@@ -45,7 +45,7 @@ port.on("data", (data) => {
   console.log("🎉".repeat(35));
 
   console.log(
-    `\n📦 Received ${data.length} bytes (Total: ${bytesReceived} bytes)`
+    `\n📦 Received ${data.length} bytes (Total: ${bytesReceived} bytes)`,
   );
 
   console.log("\n🔢 RAW BYTES (decimal):");
@@ -94,20 +94,20 @@ const timeout = setTimeout(() => {
     console.log("\n🔍 CHECKLIST:");
     console.log("   ❓ Did you press the 'Export' or 'Send to LIS' button?");
     console.log(
-      "   ❓ Is the analyzer in 'Manual Upload' or 'Auto Upload' mode?"
+      "   ❓ Is the analyzer in 'Manual Upload' or 'Auto Upload' mode?",
     );
     console.log("   ❓ Is the correct COM port selected?");
     console.log("   ❓ Is the cable properly connected?");
     console.log("   ❓ Does the analyzer show any error messages?");
     console.log("\n💡 TRY:");
     console.log(
-      "   1. Check analyzer manual for 'Data Upload' or 'LIS Communication' section"
+      "   1. Check analyzer manual for 'Data Upload' or 'LIS Communication' section",
     );
     console.log(
-      "   2. Look for a setting to enable 'Send to Computer' or 'External System'"
+      "   2. Look for a setting to enable 'Send to Computer' or 'External System'",
     );
     console.log(
-      "   3. Try running: node test-raw-data.js (tests multiple baud rates)"
+      "   3. Try running: node test-raw-data.js (tests multiple baud rates)",
     );
     console.log("   4. Verify cable with a loopback test (connect TX to RX)");
   } else {
@@ -132,7 +132,7 @@ setInterval(() => {
   const elapsed = Math.floor((Date.now() - startTime) / 1000);
   if (bytesReceived === 0 && elapsed % 10 === 0) {
     console.log(
-      `⏳ ${elapsed}s elapsed, ${bytesReceived} bytes received - still waiting...`
+      `⏳ ${elapsed}s elapsed, ${bytesReceived} bytes received - still waiting...`,
     );
   }
 }, 1000);
