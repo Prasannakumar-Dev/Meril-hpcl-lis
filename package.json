@@ -1,0 +1,22 @@
+{
+  "name": "hplc-lis-interface",
+  "version": "1.0.0",
+  "description": "LIS interface for GLUQUANT HBA1C HPLC analyzer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-parser.js",
+    "list-ports": "node list-ports.js"
+  },
+  "keywords": [
+    "lis",
+    "hplc",
+    "serial",
+    "medical",
+    "laboratory"
+  ],
+  "dependencies": {
+    "serialport": "^12.0.0",
+    "@serialport/parser-readline": "^12.0.0"
+  }
+}
